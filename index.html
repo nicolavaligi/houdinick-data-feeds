@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Houdinick Data Feeds — Italian B2B Intelligence & Programmatic APIs</title>
+  <meta name="description" content="Programmatic REST API feeds for Italian Public Tenders (PNRR), Environmental Remediation Sites (SIN & Brownfields), and Solar PV Land Intelligence. Sub-50ms latency.">
+  <meta name="keywords" content="API gare d'appalto, bandi PNRR API, bonifiche ambientali SIN, aree idonee fotovoltaico, espropri data feed, Italian public procurement data">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --green: #10b981;
+      --purple: #8b5cf6;
+      --orange: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    
+    header { padding: 40px 0 20px; border-bottom: 1px solid var(--card-border); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+    .brand span { color: var(--accent); }
+    .status-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--green); background: rgba(16, 185, 129, 0.1); padding: 6px 14px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+
+    .hero { padding: 70px 0 50px; text-align: center; }
+    .hero h1 { font-size: 46px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 .highlight { background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 19px; color: var(--text-muted); max-width: 780px; margin: 0 auto 36px; }
+    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary { background: var(--card-bg); color: var(--text); border: 1px solid var(--card-border); }
+    .btn-secondary:hover { border-color: #374151; background: #1f2937; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin: 40px 0 70px; }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s; }
+    .card:hover { border-color: #374151; }
+    .card-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 16px; width: fit-content; }
+    .tag-tenders { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .tag-remediation { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tag-solar { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+    .stat { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--card-border); font-size: 13px; }
+    .stat-label { color: var(--text-muted); }
+    .stat-value { font-weight: 600; color: #fff; }
+    .card-btn { margin-top: 20px; width: 100%; text-align: center; justify-content: center; }
+
+    .code-section { background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin: 40px 0; }
+    .code-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-muted); }
+    pre { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #e6edf3; overflow-x: auto; line-height: 1.5; }
+
+    footer { padding: 50px 0; border-top: 1px solid var(--card-border); text-align: center; font-size: 14px; color: var(--text-muted); }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <div class="brand">HOUDINICK <span>DATA</span></div>
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        API Online &bull; Latency &lt;50ms
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Data Intelligence Programmatica<br><span class="highlight">Bandi PNRR, Bonifiche & Rinnovabili</span></h1>
+      <p>Feed REST API ad alta frequenza per General Contractor, Sviluppatori FER, Società di Ingegneria e Analisti. Cursore incrementale progressivo, dati normalizzati e monetizzazione self-serve.</p>
+      <div class="hero-actions">
+        <a href="https://rapidapi.com/user/nvaligi" class="btn btn-primary" target="_blank">Esplora su RapidAPI Hub &rarr;</a>
+        <a href="https://github.com/nicolavaligi/houdinick-data-feeds" class="btn btn-secondary" target="_blank">Visualizza SDK su GitHub</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- Card 1: Tenders -->
+      <div class="card">
+        <div>
+          <span class="card-tag tag-tenders">Appalti & PNRR</span>
+          <h3>Houdinick Tenders API</h3>
+          <p>Monitoraggio programmatico di oltre &euro;3,48 Miliardi di lavori pubblici, infrastrutture ferroviarie e stradali (RFI, ANAS) e missioni PNRR con codici CIG, CUP e scadenze telematiche.</p>
+          <div class="stat"><span class="stat-label">Copertura:</span><span class="stat-value">&euro;3.488.050.000+</span></div>
+          <div class="stat"><span class="stat-label">Aggiornamento:</span><span class="stat-value">Tempo Reale (BDNCP/ANAC)</span></div>
+          <div class="stat"><span class="stat-label">Piano Gratuito:</span><span class="stat-value">50 chiamate / mese</span></div>
+        </div>
+        <a href="https://rapidapi.com/nvaligi/api/houdinick-tenders-api" class="btn btn-primary card-btn" target="_blank">Attiva Chiave Tenders &rarr;</a>
+      </div>
+
+      <!-- Card 2: Remediation -->
+      <div class="card">
+        <div>
+          <span class="card-tag tag-remediation">Ambiente & Brownfield</span>
+          <h3>Houdinick Remediation API</h3>
+          <p>Mappatura censuaria di 137 siti contaminati prioritari in Italia: tutti i 42 SIN nazionali, siti orfani PNRR e aree brownfield industriali classificate come Aree Idonee ex D.Lgs. 199/2021.</p>
+          <div class="stat"><span class="stat-label">Copertura:</span><span class="stat-value">137 Siti SIN & PNRR</span></div>
+          <div class="stat"><span class="stat-label">Dati Inclusi:</span><span class="stat-value">Superficie, Contaminanti, ARPA</span></div>
+          <div class="stat"><span class="stat-label">Piano Gratuito:</span><span class="stat-value">50 chiamate / mese</span></div>
+        </div>
+        <a href="https://rapidapi.com/nvaligi/api/houdinick-remediation-api" class="btn btn-primary card-btn" target="_blank">Attiva Chiave Bonifiche &rarr;</a>
+      </div>
+
+      <!-- Card 3: Solar Data -->
+      <div class="card">
+        <div>
+          <span class="card-tag tag-solar">Rinnovabili & Solare</span>
+          <h3>Houdinick Data API</h3>
+          <p>Intelligence geospaziale su oltre 21.900 terreni industriali e particelle per parchi fotovoltaici con prossimit&agrave; e distanza calcolata da Cabine Primarie Terna ed E-Distribuzione.</p>
+          <div class="stat"><span class="stat-label">Copertura:</span><span class="stat-value">21.912 Terreni & Espropri</span></div>
+          <div class="stat"><span class="stat-label">Scoring:</span><span class="stat-value">Algoritmo Idoneit&agrave; 0-100</span></div>
+          <div class="stat"><span class="stat-label">Piano Gratuito:</span><span class="stat-value">50 chiamate / mese</span></div>
+        </div>
+        <a href="https://rapidapi.com/nvaligi/api/houdinick-data-api" class="btn btn-primary card-btn" target="_blank">Attiva Chiave Terreni FV &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Quickstart Code -->
+    <div class="code-section">
+      <div class="code-header">
+        <span>quickstart.py &bull; Zero Dipendenze Esterne</span>
+        <span>Python 3.8+</span>
+      </div>
+      <pre><code>from houdinick import HoudinickClient
+
+# Inizializza il client con la tua chiave RapidAPI (Piano Gratuito o Pro)
+client = HoudinickClient(api_key="TUA_CHIAVE_API")
+
+# Estrai le gare d'appalto PNRR aperte in Lombardia sopra i 5 Milioni &euro;
+response = client.get_tenders(
+    category="pnrr_appalto",
+    location="Lombardia",
+    value_min=5000000,
+    limit=5
+)
+
+for t in response["items"]:
+    print(f"[{t['payload']['codice_cig']}] {t['title']} — &euro;{t['value_num']:,.2f}")</code></pre>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Houdinick Data Intelligence. Tutti i diritti riservati.</p>
+      <p style="margin-top: 8px;">
+        <a href="https://github.com/nicolavaligi/houdinick-data-feeds" target="_blank">GitHub Repository</a> &bull; 
+        <a href="https://rapidapi.com/user/nvaligi" target="_blank">RapidAPI Hub Store</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
