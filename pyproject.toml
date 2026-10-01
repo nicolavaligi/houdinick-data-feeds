@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "houdinick-data"
+version = "1.0.0"
+description = "Official Python SDK for Houdinick Data Feeds — Italian Public Tenders (PNRR), Environmental Remediation (SIN/Brownfields), and Solar PV Land Intelligence."
+readme = "README.md"
+authors = [
+    { name = "Houdinick", email = "305862309+nicolavaligi@users.noreply.github.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = [
+    "italy",
+    "pnrr",
+    "tenders",
+    "gare-appalto",
+    "bonifiche",
+    "brownfield",
+    "fotovoltaico",
+    "espropri",
+    "rapidapi",
+    "daas",
+    "b2b-data"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: GIS"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["houdinick"]
+
+[project.urls]
+Homepage = "https://nicolavaligi.github.io/houdinick-data-feeds/"
+Repository = "https://github.com/nicolavaligi/houdinick-data-feeds"
+"RapidAPI Hub" = "https://rapidapi.com/user/nvaligi"
