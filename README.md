@@ -136,6 +136,16 @@ houdinick-data-feeds/
 
 ---
 
+## Specialized Open-Source Repositories
+
+Explore domain-specific repositories with standalone examples and data schemas:
+
+- 🏛️ **[Italian Public Tenders & PNRR Feed](https://github.com/nicolavaligi/italian-public-tenders-api)** — CIG, CUP, ANAC, infrastructure works, and tender value filters.
+- 🏭 **[Italian Environmental Remediation & SIN Feed](https://github.com/nicolavaligi/bonifiche-ambientali-sin-api)** — Contaminated sites, brownfield repowering, MASE decrees, and solar eligibility.
+- ☀️ **[Italian Solar Land & Substation Feed](https://github.com/nicolavaligi/terreni-fotovoltaico-italia)** — 21,900+ parcels, primary substation distances, and grid-connection scores.
+
+---
+
 ## Architecture & Guarantees
 
 - **Sub-50ms Latency:** Deployed on cloud container edge with SQLite WAL mode.
