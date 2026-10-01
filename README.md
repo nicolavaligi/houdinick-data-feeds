@@ -108,13 +108,14 @@ curl -X GET "https://houdinick-data-api-production.up.railway.app/api/v1/tenders
 
 Houdinick APIs are distributed self-serve on the **RapidAPI Hub**:
 
-| API Name | Coverage | Free Tier | Pro Tier | RapidAPI Hub Link |
+| API Name | Coverage | Free Tier | Pro Tier | Direct RapidAPI Hub Link |
 |---|---|---|---|---|
-| **Houdinick Tenders API** | Gare d'Appalto & PNRR (€3.48B) | 50 calls/mo | $49/mo (2,000 calls) | [Subscribe on RapidAPI](https://rapidapi.com) |
-| **Houdinick Remediation API** | 137 SIN & Brownfields | 50 calls/mo | $49/mo (2,000 calls) | [Subscribe on RapidAPI](https://rapidapi.com) |
-| **Houdinick Data API** | 21,900+ Terreni FV ed Espropri | 50 calls/mo | $49/mo (2,000 calls) | [Subscribe on RapidAPI](https://rapidapi.com) |
+| **Houdinick Remediation API** | 137 SIN & Brownfields | 50 calls/mo | $49/mo (2,000 calls) | [👉 Subscribe on RapidAPI](https://rapidapi.com/nvaligi/api/houdinick-remediation-api) |
+| **Houdinick Tenders API** | Gare d'Appalto & PNRR (€3.48B) | 50 calls/mo | $49/mo (2,000 calls) | [👉 Subscribe on RapidAPI](https://rapidapi.com/nvaligi/api/houdinick-tenders-api) |
+| **Houdinick Data API** | 21,900+ Terreni FV ed Espropri | 50 calls/mo | $49/mo (2,000 calls) | [👉 Subscribe on RapidAPI](https://rapidapi.com/nvaligi/api/houdinick-data-api) |
 
-*Authentication is fully automated: once subscribed on RapidAPI, pass your `X-RapidAPI-Key` or `X-API-Key` header.*
+> 🔗 **Provider Profile:** Explore all active Houdinick feeds on the [nvaligi RapidAPI Provider Profile](https://rapidapi.com/user/nvaligi).  
+> *Authentication is fully automated: once subscribed on RapidAPI, pass your `X-RapidAPI-Key` or `X-API-Key` header.*
 
 ---
 
